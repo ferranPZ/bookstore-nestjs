@@ -17,7 +17,7 @@ import { UserService } from './user.service';
 
 @Controller('users')
 export class UserController {
-  constructor(private readonly _userService: UserService) { }
+  constructor(private readonly _userService: UserService) {}
 
   @Get(':id')
   async getUser(@Param('id', ParseIntPipe) id: number): Promise<UserDto> {

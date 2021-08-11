@@ -58,7 +58,7 @@ export class UserService {
     const userToDelete = await this._userRepository.findOne(id, {
       where: { stauts: 'ACTIVE' },
     });
-    if(!userToDelete) throw new NotFoundException('user doesnt exist');
+    if (!userToDelete) throw new NotFoundException('user doesnt exist');
     await this._userRepository.update(id, { status: 'INACTIVE' });
   }
 }
